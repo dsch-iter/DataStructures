@@ -3,9 +3,9 @@ package com.albion.common.search.graph;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.albion.common.graph.Edge;
-import com.albion.common.graph.Graph;
-import com.albion.common.graph.Vertex;
+import com.albion.common.graph.core.Edge;
+import com.albion.common.graph.core.Graph;
+import com.albion.common.graph.core.Vertex;
 
 public class BreathFirstSearch {
 
@@ -20,7 +20,7 @@ public class BreathFirstSearch {
 			queue.remove(0);
 			
 			if(v.getId() == id.intValue()){
-				v.setTraveled(true);
+				v.setVisted(true);
 				return v;
 			}
 			
@@ -28,12 +28,12 @@ public class BreathFirstSearch {
 			for(Edge edge:edgeList){
 				Vertex x = graph.getGraph().get(edge.getX());
 				Vertex y = graph.getGraph().get(edge.getY());
-				if(x.isTraveled() == false){
-					x.setTraveled(true);
+				if(x.isVisted() == false){
+					x.setVisted(true);
 					queue.add(x);
 				}
-				if(y.isTraveled() == false){
-					y.setTraveled(true);
+				if(y.isVisted() == false){
+					y.setVisted(true);
 					queue.add(y);
 				}
 			}

@@ -1,7 +1,6 @@
 package com.albion.common.maps.hashmap;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class KyHashMap {
 	

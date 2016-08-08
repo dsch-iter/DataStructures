@@ -104,6 +104,8 @@ public class BinaryTreeTest {
 	        return retVal;
 	}
 	
+	
+	
 	@Test(dataProvider = "d02")
 	public void testTreePrint(TreeNode<Integer> root) {
 		BinaryTreePrinter.printNode(root);
@@ -140,4 +142,22 @@ public class BinaryTreeTest {
 		Assert.assertTrue(seek != null);
 	}
 	
+	
+	@Test
+	public void testInversion() {
+		Integer[] array = {15, 6, 18, 3, 7, 17, 20, 2, 4, 13, 9};
+		BinaryTree bt = new BinaryTree();
+		
+		for(Integer x : array) {
+			bt.insert(x);
+		}
+		
+		TreeNode<Integer> root = bt.getRoot();
+		BinaryTreePrinter.printNode(root);
+		
+		BinaryTreeInversion bti = new BinaryTreeInversion(root);
+		bti.invert();
+		
+		BinaryTreePrinter.printNode(root);
+	}
 }

@@ -1,7 +1,5 @@
 package com.albion.common.tree;
 
-import java.util.Stack;
-
 public class BinaryTree {
 	protected TreeNode<Integer> root;
 	public TreeNode<Integer> getRoot() {
